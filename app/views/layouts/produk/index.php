@@ -5,7 +5,7 @@
     <div class="box">
     <?$num=0;?>
     <div class="box">
-      <p><a href="<?=BASE_URL.'/kategori/tambah/';?>">Tambahkan Data Produk</a></p>
+      <p><a href="<?=BASE_URL.'/produk/tambah/';?>">Tambahkan Data Produk</a></p>
       <br>
       <table border="1" cellspacing="0" class="table">
         <thead>
