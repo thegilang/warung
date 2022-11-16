@@ -44,7 +44,7 @@
               <?=$num;?>.
             </td>
             <td>
-             <?=$produk['category_id'];?>
+             <?=$produk['category_name'];?>
             </td>
             <td>
              <?=$produk['product_name'];?>
@@ -56,10 +56,10 @@
              <?=$produk['product_description'];?>
             </td>
             <td>
-            <img src="<?=BASE_URL.'/storage/'.$produk['product_image'];?>">
+            <img src="<?=BASE_URL.'/storage/'.$produk['product_image'];?>" width="50px">
             </td>
             <td>
-              <?=$produk['product_status'];?>
+              <?=$produk['product_status'] == 0 ? 'Tidak Aktif' : 'Aktif';?>
             </td>
             <td>
               <a href="<?=BASE_URL.'/kategori/edit/'.$produk['category_id'];?>">Edit</a> || <a href="<?=BASE_URL.'/kategori/hapus/'.$produk['category_id'];?>">Hapus</a>

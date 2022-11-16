@@ -2,12 +2,13 @@
 
 class Produk_model extends Controller {
   private $tabel = 'tb_product';
+  private $join = 'tb_category';
   private $db;
   public function __construct(){
     $this -> db = new Database;
   }
   public function getProduk(){
-    $this -> db ->query("SELECT * FROM {$this->tabel}");
+    $this -> db ->query("SELECT * FROM {$this->tabel} LEFT JOIN {$this->join} USING (category_id) ORDER BY product_id DESC");
     return $this -> db -> resultSet();
   }
   public function tambahproduk($data){
