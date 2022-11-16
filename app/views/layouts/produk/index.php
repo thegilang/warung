@@ -44,7 +44,10 @@
               <?=$num;?>.
             </td>
             <td>
-             <?=$produk['category_name'];?>
+             <?=$produk['category_id'];?>
+            </td>
+            <td>
+             <?=$produk['product_name'];?>
             </td>
             <td>
              <?=$produk['product_price'];?>
@@ -53,13 +56,10 @@
              <?=$produk['product_description'];?>
             </td>
             <td>
-             <img src="<?=$produk['product_image'];?>">
+            <img src="<?=BASE_URL.'/storage/'.$produk['product_image'];?>">
             </td>
             <td>
-             <?=$produk['product_status'];?>
-            </td>
-            <td>
-             <?=$produk['product_name'];?>
+              <?=$produk['product_status'];?>
             </td>
             <td>
               <a href="<?=BASE_URL.'/kategori/edit/'.$produk['category_id'];?>">Edit</a> || <a href="<?=BASE_URL.'/kategori/hapus/'.$produk['category_id'];?>">Hapus</a>

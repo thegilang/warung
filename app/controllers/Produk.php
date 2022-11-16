@@ -50,8 +50,9 @@ class Produk extends Controller {
       $data = [
         "nama" => htmlspecialchars($_POST['nama']),
         "kategori" => htmlspecialchars($_POST['kategori']),
+        "harga" => htmlspecialchars($_POST['harga']),
         "deskripsi" => htmlspecialchars($_POST['deskripsi']),
-        "gambar" => htmlspecialchars($_POST['gambar']),
+        "gambar" => Upload::uploadFile($_FILES['gambar'],'/images/'),
         "status" => htmlspecialchars($_POST['status']),
       ];
       if($this -> model('Produk_model')->tambahproduk($data) > 0){

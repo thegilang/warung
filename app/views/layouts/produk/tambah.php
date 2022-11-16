@@ -7,7 +7,7 @@
         <select  name="kategori" class="input-control" required>
           <option value="">__Pilih__</option>
           <?foreach($data['data_kategori'] as $kategori):?>
-            <option value="<?=$kategori['category_name'];?>"><?=$kategori['category_name'];?></option>
+            <option value="<?=$kategori['category_id'];?>"><?=$kategori['category_name'];?></option>
           <?endforeach;?>
         </select>
         <input type="text" name="nama" placeholder="Nama Produk" class="input-control" autocomplete="off" required>
