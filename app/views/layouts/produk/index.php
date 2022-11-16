@@ -62,7 +62,7 @@
               <?=$produk['product_status'] == 0 ? 'Tidak Aktif' : 'Aktif';?>
             </td>
             <td>
-              <a href="<?=BASE_URL.'/kategori/edit/'.$produk['category_id'];?>">Edit</a> || <a href="<?=BASE_URL.'/kategori/hapus/'.$produk['category_id'];?>">Hapus</a>
+              <a href="<?=BASE_URL.'/produk/edit/'.$produk['product_id'];?>">Edit</a> || <a href="<?=BASE_URL.'/produk/hapus/'.$produk['product_id'];?>">Hapus</a>
             </td>
           </tr>
           <?endforeach;?>

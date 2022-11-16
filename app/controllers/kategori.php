@@ -47,11 +47,13 @@ class Kategori extends Controller {
     $this -> view('layouts/kategori/edit',$data);
     $this -> view('paratials/home/footer');
   }
-  public function hapus($id){
-    if($this -> model('Kategori_model')->hapuskategori($id) > 0){
-        Flasher::setFlash('Berhasil Di Hapus','success');
-    }else{
-        Flasher::setFlash('Gagal Di Hapus','error');
+  public function hapus($id=null){
+    if(!is_null($id)){
+      if($this -> model('Kategori_model')->hapuskategori($id) > 0){
+          Flasher::setFlash('Berhasil Di Hapus','success');
+      }else{
+          Flasher::setFlash('Gagal Di Hapus','error');
+      }
     }
       header('Location: '.BASE_URL.'/kategori');
       exit;

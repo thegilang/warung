@@ -21,4 +21,16 @@ class Produk_model extends Controller {
     $this -> db -> bind('status',$data['status']);
     return $this -> db -> rowCount();
   }
+  public function gethapusproduk($id){
+    $this -> deleteImg($id);
+    $this -> db -> query("DELETE FROM {$this->tabel} WHERE product_id=:id");
+    $this -> db -> bind('id',$id);
+    return $this -> db -> rowCount();
+  }
+  public function deleteImg($id){
+     $this -> db -> query("SELECT * FROM {$this->tabel} WHERE product_id=:id");
+     $this -> db ->  bind('id',$id);
+     $file = $this -> db -> single()['product_image'];
+     Upload::deleteFile($file);
+  }
 }

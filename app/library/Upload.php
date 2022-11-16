@@ -14,8 +14,8 @@ class Upload{
     $dir = $dir[0] !== "/" ? $dir : substr($dir,1);
     return $dir;
   }
-  public static function deleteFile($file,$dir){
-    $path = __DIR__.'/../../public/storage/'.$dir;
+  public static function deleteFile($file){
+    $path = __DIR__.'/../../public/storage/';
     if(file_exists($path.$file)){
       unlink($path.$file);
     }else{

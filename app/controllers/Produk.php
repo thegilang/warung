@@ -51,7 +51,7 @@ class Produk extends Controller {
         "nama" => htmlspecialchars($_POST['nama']),
         "kategori" => htmlspecialchars($_POST['kategori']),
         "harga" => htmlspecialchars($_POST['harga']),
-        "deskripsi" => htmlspecialchars($_POST['deskripsi']),
+        "deskripsi" => $_POST['deskripsi'],
         "gambar" => Upload::uploadFile($_FILES['gambar'],'/images/'),
         "status" => htmlspecialchars($_POST['status']),
       ];
@@ -70,5 +70,15 @@ class Produk extends Controller {
   public function edit(){
     
   }
-  
+  public function hapus($id=null){
+    if(!is_null($id)){
+      if($this -> model('Produk_model')->gethapusproduk($id) > 0){
+          Flasher::setFlash('Berhasil Di Hapus','success');
+      }else{
+          Flasher::setFlash('Gagal Di Hapus','error');
+      }
+    }
+      header('Location: '.BASE_URL.'/produk');
+      exit;
+  }
 }

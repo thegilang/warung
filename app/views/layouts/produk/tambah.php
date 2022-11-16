@@ -11,7 +11,7 @@
           <?endforeach;?>
         </select>
         <input type="text" name="nama" placeholder="Nama Produk" class="input-control" autocomplete="off" required>
-        <input type="text" name="harga" placeholder="Harga Produk" class="input-control" autocomplete="off" required>
+        <input type="number" name="harga" placeholder="Harga Produk" class="input-control" autocomplete="off" required>
         <textarea name="deskripsi" placeholder="Deskripsi" class="input-control" autocomplete="off" required></textarea>
         <input type="file" name="gambar" accept="image/*" class="input-control"  required>
         <select  name="status" class="input-control" required>
